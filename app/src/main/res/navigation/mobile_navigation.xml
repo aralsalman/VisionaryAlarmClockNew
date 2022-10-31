@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_alarms">
+
+    <fragment
+        android:id="@+id/nav_alarms"
+        android:name="com.csi4999.visionaryalarmclock.fragment.AlarmsFragment"
+        android:label="Visionary Alarm Clock"
+        tools:layout="@layout/fragment_alarms" />
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.csi4999.visionaryalarmclock.fragment.SettingsFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_settings" />
+
+
+    <fragment
+        android:id="@+id/nav_calendar"
+        android:name="com.csi4999.visionaryalarmclock.fragment.CalendarFragment"
+        android:label="Calendar"
+        tools:layout="@layout/fragment_calendar"/>
+
+    <fragment
+        android:id="@+id/nav_maps"
+        android:name="com.csi4999.visionaryalarmclock.fragment.MapsFragment"
+        android:label="Maps"
+        tools:layout="@layout/fragment_maps" />
+
+    <fragment
+        android:id="@+id/nav_weather"
+        android:name="com.csi4999.visionaryalarmclock.fragment.WeatherFragment"
+        android:label="Weather"
+        tools:layout="@layout/fragment_weather" />
+
+    <fragment
+        android:id="@+id/nav_news"
+        android:name="com.csi4999.visionaryalarmclock.fragment.NewsFragment"
+        android:label="News"
+        tools:layout="@layout/fragment_news" />
+</navigation>

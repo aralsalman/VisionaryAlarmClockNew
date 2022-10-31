@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group
+        android:id="@+id/g1"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_alarms"
+            app:actionLayout="@layout/drawer_alarms_item_layout"
+            app:showAsAction="always"
+            tools:ignore="MenuTitle" />
+    </group>
+    <group
+        android:id="@+id/g2"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_calendar"
+            app:actionLayout="@layout/drawer_calendar_item_layout"
+            app:showAsAction="always"
+            tools:ignore="MenuTitle" />
+    </group>
+    <group
+        android:id="@+id/g5"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_maps"
+            app:actionLayout="@layout/drawer_maps_item_layout"
+            app:showAsAction="always"
+            tools:ignore="MenuTitle" />
+    </group>
+    <group
+        android:id="@+id/g6"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_weather"
+            app:actionLayout="@layout/drawer_weather_item_layout"
+            app:showAsAction="always"
+            tools:ignore="MenuTitle" />
+    </group>
+    <group
+        android:id="@+id/g7"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_news"
+            app:actionLayout="@layout/drawer_news_item_layout"
+            app:showAsAction="always"
+            tools:ignore="MenuTitle" />
+    </group>
+    <group
+        android:id="@+id/g8"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_settings"
+            app:actionLayout="@layout/drawer_setting_item_layout"
+            app:showAsAction="always"
+            tools:ignore="MenuTitle" />
+    </group>
+
+</menu>
