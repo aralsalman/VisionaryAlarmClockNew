@@ -3,17 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.csi4999.visionaryalarmclock">
 
-    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
-    <!-- Open  Alarm activity in android Q -->
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    <!-- For device reboot -->
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <!-- call phone -->
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" /> <!-- Open  Alarm activity in android Q -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> <!-- For device reboot -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /> <!-- call phone -->
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission
         android:name="android.permission.WRITE_SETTINGS"
         tools:ignore="ProtectedPermissions" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -22,25 +19,57 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ReminderApp">
-        <activity android:name="com.csi4999.visionaryalarmclock.activity.CalendarDayActivity"
-            android:screenOrientation="portrait"/>
+
+        <!--
+             TODO: Before you run your application, you need a Google Maps API key.
+
+             To get one, follow the directions here:
+
+                https://developers.google.com/maps/documentation/android-sdk/get-api-key
+
+             Once you have your API key (it starts with "AIza"), define a new property in your
+             project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
+             "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="YOUR_API_KEY" />
+
         <activity
-            android:name="com.csi4999.visionaryalarmclock.activity.BootActivity"
+            android:name=".activity.MapsActivity"
+            android:exported="true"
+            android:label="@string/title_activity_maps">
+            <!-- <intent-filter>
+                 <action android:name="android.intent.action." />
+
+                 <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>-->>
+        </activity>
+
+
+        <activity
+            android:name=".activity.CalendarDayActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.BootActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Transparent" />
-        <activity android:name="com.csi4999.visionaryalarmclock.activity.AlarmActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.csi4999.visionaryalarmclock.activity.AddNewReminder"
-            android:screenOrientation="portrait"/>
         <activity
-            android:name="com.csi4999.visionaryalarmclock.activity.HomeActivity"
-            android:screenOrientation="portrait"
+            android:name=".activity.AlarmActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AddNewReminder"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.HomeActivity"
             android:label="@string/title_activity_home"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.ReminderApp.NoActionBar"
             android:windowSoftInputMode="adjustNothing" />
-        <activity android:name="com.csi4999.visionaryalarmclock.activity.SplashActivity"
-            android:screenOrientation="portrait"
-            android:exported="true">
+        <activity
+            android:name=".activity.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -48,7 +77,9 @@
             </intent-filter>
         </activity>
 
-        <receiver android:exported="false" android:name="com.csi4999.visionaryalarmclock.util.MyBroadCastReciver">
+        <receiver
+            android:name="com.csi4999.visionaryalarmclock.util.MyBroadCastReciver"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
@@ -56,7 +87,7 @@
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="@string/google_ads_application_id"/>
+            android:value="@string/google_ads_application_id" />
     </application>
 
 </manifest>

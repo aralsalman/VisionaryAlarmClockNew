@@ -231,6 +231,8 @@ class AddNewReminder : AppCompatActivity(), View.OnClickListener {
         } else if (reminderMarker?.trim()!!.isEmpty()) {
             toast("Please select reported as");
         } else if (millies <= calendar.timeInMillis) {
+            println("YOOO $millies");
+            println("yoOOO $calendar.timeInMillis")
             toast("Please select future time");
         } else {
             if (intent.hasExtra(ADD_REMINDER_TABLE)) {

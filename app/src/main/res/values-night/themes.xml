@@ -35,7 +35,7 @@
     <style name="HintStyle">
         <item name="fontFamily">sans-serif-condensed-light</item>
         <item name="android:textStyle">normal</item>
-        <item name="android:textColorHint">@color/dark_white</item>
+        <item name="android:textColorHint">@color/gray</item>
         <item name="android:textSize">@dimen/_15sdp</item>
     </style>
 

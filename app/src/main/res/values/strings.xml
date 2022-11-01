@@ -23,4 +23,5 @@
     <!--Admob ids -->
     <string name="google_ads_application_id">ca-app-pub-3940256099942544~3347511713</string>
     <string name="google_ads_banner_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="title_activity_maps">MapsActivity</string>
 </resources>

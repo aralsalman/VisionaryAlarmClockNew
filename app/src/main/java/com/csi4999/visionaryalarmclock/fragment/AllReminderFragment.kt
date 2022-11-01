@@ -93,8 +93,8 @@ class AllReminderFragment : Fragment() {
             }, mySharedPreferences
         )
 
-      //  fragmentAllReminderBinding.rvOverDueReminderList.itemAnimator = DefaultItemAnimator()
-        //fragmentAllReminderBinding.rvOverDueReminderList.adapter = remindeLisAdapter1
+        fragmentAllReminderBinding.rvOverDueReminderList.itemAnimator = DefaultItemAnimator()
+        fragmentAllReminderBinding.rvOverDueReminderList.adapter = remindeLisAdapter1
 
         remindeLisAdapter2 = ReminderListAdapter(
             requireContext(), todayReminderList,
@@ -357,10 +357,10 @@ class AllReminderFragment : Fragment() {
                 }
             }
             if (overDueReminderList.isEmpty()) {
-              //  fragmentAllReminderBinding.rvOverDueReminderList.visibility = View.GONE
+                fragmentAllReminderBinding.rvOverDueReminderList.visibility = View.GONE
                 fragmentAllReminderBinding.tvOverDue.visibility = View.GONE
             } else {
-              //  fragmentAllReminderBinding.rvOverDueReminderList.visibility = View.VISIBLE
+                fragmentAllReminderBinding.rvOverDueReminderList.visibility = View.VISIBLE
                 fragmentAllReminderBinding.tvOverDue.visibility = View.VISIBLE
             }
             if (todayReminderList.isEmpty()) {
@@ -385,7 +385,7 @@ class AllReminderFragment : Fragment() {
                 fragmentAllReminderBinding.tvUpcoming.visibility = View.VISIBLE
             }
             if (overDueReminderList.isEmpty() && todayReminderList.isEmpty() && tomorrowReminderList.isEmpty() && upcomingReminderList.isEmpty()) {
-              //  fragmentAllReminderBinding.rvOverDueReminderList.visibility = View.GONE
+                fragmentAllReminderBinding.rvOverDueReminderList.visibility = View.GONE
                 fragmentAllReminderBinding.tvOverDue.visibility = View.GONE
                 fragmentAllReminderBinding.rvTodayReminderList.visibility = View.GONE
                 fragmentAllReminderBinding.tvToday.visibility = View.GONE
