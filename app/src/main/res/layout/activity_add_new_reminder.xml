@@ -43,7 +43,7 @@
                     android:id="@+id/etRemiderTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Reminder me to..."
+                    android:hint="Remind me to..."
                     android:textColor="#FFFFFF"
                     android:textColorHint="#F3F1F1" />
 

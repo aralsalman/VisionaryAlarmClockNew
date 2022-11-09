@@ -30,15 +30,24 @@
         android:label="Maps"
         tools:layout="@layout/fragment_maps" />
 
-    <fragment
+   <!-- <fragment
         android:id="@+id/nav_weather"
         android:name="com.csi4999.visionaryalarmclock.fragment.WeatherFragment"
         android:label="Weather"
-        tools:layout="@layout/fragment_weather" />
+        tools:layout="@layout/fragment_weather" />-->
 
     <fragment
         android:id="@+id/nav_news"
         android:name="com.csi4999.visionaryalarmclock.fragment.NewsFragment"
         android:label="News"
         tools:layout="@layout/fragment_news" />
+
+    <activity
+        android:id="@+id/nav_weather"
+        android:name="com.csi4999.visionaryalarmclock.activity.WeatherActivity"
+        android:label="Weather"
+        tools:layout="@layout/activity_weather"
+        />
+
+
 </navigation>

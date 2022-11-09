@@ -70,6 +70,20 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.ReminderApp.NoActionBar"
             android:windowSoftInputMode="adjustNothing" />
+
+
+        <activity
+            android:name=".activity.WeatherActivity"
+            android:exported="true"
+            android:label="@string/title_activity_weather">
+           <!-- <intent-filter>
+                 <action android:name="android.intent.action." />
+
+                 <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter> -->
+        </activity>
+
+
         <activity
             android:name=".activity.SplashActivity"
             android:exported="true"
