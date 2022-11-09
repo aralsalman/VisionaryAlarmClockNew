@@ -146,24 +146,15 @@ public class WeatherActivity extends AppCompatActivity {
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-                loadingPB.setVisibility(View.GONE);
-                homeRL.setVisibility(View.VISIBLE);
                 weatherRVModalArrayList.clear();
 
                 try {
                     String temperature = response.getJSONObject("data").getString("temp");
                     temperatureTV.setText(temperature + "°F");
-                    double isDay = response.getJSONArray("data").getJSONObject(0).getDouble("timestamp_local");
                     String condition = response.getJSONObject("data").getString("text");
                     String conditionIcon = response.getJSONObject("data").getString("icon");
                     Picasso.get().load("@drawable/".concat(conditionIcon)).into(iconIV); ///dont have the icons loaded in yet hoping that this will take the icon id from drawables once images are in
                     conditionTV.setText(condition);
-                    if(isDay>14){
-                        //morning
-                        Picasso.get().load("@drawable/daysky").into(backIV);
-                    }else{
-                        Picasso.get().load("@drawable/nightsky").into(backIV);
-                    }
 
                     JSONArray forecastObj = response.getJSONArray("data");
 
