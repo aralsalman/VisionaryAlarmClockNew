@@ -1,6 +1,9 @@
 package com.csi4999.visionaryalarmclock.activity
 
+
 import android.os.Bundle
+import android.view.Menu
+import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
@@ -44,13 +47,10 @@ class HomeActivity : AppCompatActivity() {
 
 
 
-
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-
-
-        var menu = navView.menu
+       // var menu = navView.menu
 
 
 

@@ -19,7 +19,7 @@
     <string name="help_repeate_interval_answer">When you create a new task or edit an existing one, tap the "Repeat" setting, you will be prompted with a dialog of repeat options thereafter; in the dialog select the "Custom" option and specify the repeat interval of your desire.</string>
     <string name="help_contact_que">Didn\'t find the answer to your question?</string>
     <string name="help_contact_answer">In such case, the best option for you would be to contact us directly and explain your issue in as much detail as possible; you can also include the relevant screenshots and/or screen recordings.</string>
-
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyCKworSLJEygpdxzhSk0kfHXL4vCZQeggw</string>
     <!--Admob ids -->
     <string name="google_ads_application_id">ca-app-pub-3940256099942544~3347511713</string>
     <string name="google_ads_banner_id">ca-app-pub-3940256099942544/6300978111</string>
