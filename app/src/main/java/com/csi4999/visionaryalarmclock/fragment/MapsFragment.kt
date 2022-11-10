@@ -41,7 +41,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val mapFragment = fragmentManager?.findFragmentById(R.id.map1) as SupportMapFragment
+        val mapFragment = childFragmentManager?.findFragmentById(R.id.map1) as SupportMapFragment
         mapFragment.getMapAsync(this)
     }
 
