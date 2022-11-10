@@ -135,20 +135,20 @@ internal class ReminderListAdapter(
                       .into(ivReportAs)
               }
               if (addNewReminderTableList?.isFav!!){
-                  ivFavReminder.setColorFilter(
-                      ContextCompat.getColor(context, R.color.yellow),
-                      android.graphics.PorterDuff.Mode.MULTIPLY
-                  );
+                 // ivFavReminder.setColorFilter(
+                 //     ContextCompat.getColor(context, R.color.yellow),
+                 //     android.graphics.PorterDuff.Mode.MULTIPLY
+                 // );
               }else{
-                  ivFavReminder.setColorFilter(
-                      ContextCompat.getColor(context, R.color.white),
-                      android.graphics.PorterDuff.Mode.MULTIPLY
-                  );
+                 // ivFavReminder.setColorFilter(
+                 //   ContextCompat.getColor(context, R.color.white),
+                  //    android.graphics.PorterDuff.Mode.MULTIPLY
+                 // );
               }
 
-              ivFavReminder.setOnClickListener{ view ->
-                  clickListener.onStarClick(position)
-              }
+             // ivFavReminder.setOnClickListener{ view ->
+              //    clickListener.onStarClick(position)
+             // }
 
               ivDots.setOnClickListener{ view ->
                   clickListener.onDotsClick(position)

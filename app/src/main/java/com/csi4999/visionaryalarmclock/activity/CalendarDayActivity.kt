@@ -163,27 +163,9 @@ class CalendarDayActivity : AppCompatActivity() {
             onDeleteButtonClicked(addNewReminderTable)
         }
 
-        bottomSheetAllReminderDialogBinding.llShare.setOnClickListener { view ->
-            bottomSheetDialog.dismiss()
-            val intent = Intent()
-            intent.action = Intent.ACTION_SEND
-            intent.putExtra(Intent.EXTRA_SUBJECT, "Android Studio Pro")
-            intent.putExtra(
-                Intent.EXTRA_TEXT,
-                addNewReminderTable.title
-            )
-            intent.type = "text/plain"
-            startActivity(intent)
-        }
 
-        bottomSheetAllReminderDialogBinding.llCopy.setOnClickListener { view ->
-            bottomSheetDialog.dismiss()
-            val clipboard: ClipboardManager? =
-                getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager?
-            val clip = ClipData.newPlainText("label", addNewReminderTable.title)
-            clipboard?.setPrimaryClip(clip)
-            toast("Copied to clipboard")
-        }
+
+
 
 
         bottomSheetAllReminderDialogBinding.llPostPone.setOnClickListener { view ->

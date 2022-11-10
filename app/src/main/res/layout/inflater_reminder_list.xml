@@ -116,15 +116,6 @@
                     android:textColor="#FFFFFF"
                     android:text="Once" />
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="@dimen/_25sdp"
-                    android:layout_height="@dimen/_25sdp"
-                    android:paddingLeft="@dimen/_10sdp"
-                    android:id="@+id/ivFavReminder"
-                    android:src="@drawable/ic_baseline_star_rate_24"
-                    android:layout_gravity="right|center"
-                    android:tint="#FFFFFF" />
-
             </LinearLayout>
 
 

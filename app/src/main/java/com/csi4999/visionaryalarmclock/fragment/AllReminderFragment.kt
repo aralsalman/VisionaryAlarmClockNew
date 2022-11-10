@@ -212,27 +212,9 @@ class AllReminderFragment : Fragment() {
             onDeleteButtonClicked(addNewReminderTable)
         }
 
-        bottomSheetAllReminderDialogBinding.llShare.setOnClickListener { view ->
-            bottomSheetDialog.dismiss()
-            val intent = Intent()
-            intent.action = Intent.ACTION_SEND
-            intent.putExtra(Intent.EXTRA_SUBJECT, "Android Studio Pro")
-            intent.putExtra(
-                Intent.EXTRA_TEXT,
-                addNewReminderTable.title
-            )
-            intent.type = "text/plain"
-            startActivity(intent)
-        }
 
-        bottomSheetAllReminderDialogBinding.llCopy.setOnClickListener { view ->
-            bottomSheetDialog.dismiss()
-            val clipboard: ClipboardManager? =
-                activity?.getSystemService(CLIPBOARD_SERVICE) as ClipboardManager?
-            val clip = ClipData.newPlainText("label", addNewReminderTable.title)
-            clipboard?.setPrimaryClip(clip)
-            activity?.toast("Copied to clipboard")
-        }
+
+
 
         bottomSheetAllReminderDialogBinding.llDone.setOnClickListener { view ->
             bottomSheetDialog.dismiss()
