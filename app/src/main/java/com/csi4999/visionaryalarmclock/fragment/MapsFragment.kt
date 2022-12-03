@@ -7,6 +7,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.csi4999.visionaryalarmclock.R
 import com.csi4999.visionaryalarmclock.activity.MapsActivity
+//import com.csi4999.visionaryalarmclock.activity.mapView
 import com.csi4999.visionaryalarmclock.databinding.FragmentMapsBinding
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -14,48 +15,45 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.mapbox.maps.MapView
 
 
-class MapsFragment : Fragment(), OnMapReadyCallback {
 
-    lateinit var map: GoogleMap
-    lateinit var fragmentMapBinding: FragmentMapsBinding
+class MapsFragment : Fragment(){
+    var mapView: MapView? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-    //    fragmentMapBinding =
-    //        DataBindingUtil.inflate(inflater, R.layout.fragment_maps, container, false)
-
-    //    return fragmentMapBinding.root
-
-
         val v = inflater.inflate(R.layout.fragment_maps, container, false)
-
-
-
         return v
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        val mapFragment = childFragmentManager?.findFragmentById(R.id.map1) as SupportMapFragment
-        mapFragment.getMapAsync(this)
+    override fun onStart() {
+        super.onStart()
+        mapView?.onStart()
     }
 
-    override fun onMapReady(p0: GoogleMap) {
-        map = p0
-
-        var city: LatLng = LatLng(42.670319, -83.222260)
-        var option: MarkerOptions = MarkerOptions()
-        option.position(city).title("CityName")
-        map.addMarker(option)
-        map.moveCamera(CameraUpdateFactory.newLatLng(city))
-
+    override fun onStop() {
+        super.onStop()
+        mapView?.onStop()
     }
 
+    override fun onLowMemory() {
+        super.onLowMemory()
+        mapView?.onLowMemory()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        //mapView?.onDestroy()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        mapView?.onDestroy()
+    }
 
 }
 
