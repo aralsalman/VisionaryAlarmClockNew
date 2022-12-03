@@ -5,11 +5,11 @@ import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.csi4999.visionaryalarmclock.R
-import com.csi4999.visionaryalarmclock.databinding.FragmentMapsBinding
+import com.csi4999.visionaryalarmclock.databinding.FragmentWeatherBinding
 
 class WeatherFragment : Fragment() {
 
-    lateinit var fragmentMapBinding: FragmentMapsBinding
+    lateinit var fragmentWeatherBinding: FragmentWeatherBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -20,7 +20,7 @@ class WeatherFragment : Fragment() {
        // fragmentMapBinding =
           //  DataBindingUtil.inflate(inflater, R.layout.fragment_maps, container, false)
 
-        return fragmentMapBinding.root
+        return fragmentWeatherBinding.root
     }
 
 
