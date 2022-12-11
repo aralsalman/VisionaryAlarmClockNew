@@ -5,6 +5,7 @@ import static java.sql.DriverManager.println;
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -166,13 +167,17 @@ public class WeatherActivity extends AppCompatActivity {
                     temperatureTV.setText(temperature + "°F");
                    String condition = response.getJSONArray("data").getJSONObject(0).getJSONObject("weather").getString("description");
                    conditionTV.setText(condition);
-                   //String conditionIcon = response.getJSONObject("weather").getString("icon");
-                    //Picasso.get().load("http:".concat(conditionIcon)).into(iconIV);
+                   String conditionIcon = response.getJSONArray("data").getJSONObject(0).getJSONObject("weather").getString("icon");;
+                   Resources res = getResources();
+                   int resourceId = res.getIdentifier(
+                           conditionIcon, "drawable", getPackageName() );
+                   iconIV.setImageResource( resourceId );
 
 
-                    JSONObject forecastObj = response.getJSONObject("forecast");
-                    JSONObject forcastO = forecastObj.getJSONArray("forecastday").getJSONObject(0);
-                    JSONArray hourArray = forcastO.getJSONArray("hour");
+
+                   // JSONObject forecastObj = response.getJSONObject("forecast");
+                  //  JSONObject forcastO = forecastObj.getJSONArray("forecastday").getJSONObject(0);
+                   // JSONArray hourArray = forcastO.getJSONArray("hour");
                     println(cityName);
 
                    /* for(int i=0; i<forecastObj.length(); i++ ){
