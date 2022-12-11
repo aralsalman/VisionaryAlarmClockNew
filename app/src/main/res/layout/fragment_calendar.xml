@@ -26,9 +26,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
         android:layout_margin="@dimen/_16sdp"
-        android:src="@drawable/ic_baseline_add_24"
+        android:src="@drawable/googleg_standard_color_18"
         app:backgroundTint="@color/dark_gray"
-        app:tint="@color/white"
+        app:tint="@android:color/holo_blue_bright"
         tools:ignore="SpeakableTextPresentCheck" />
 
 </FrameLayout></layout>

@@ -321,7 +321,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="0.1dp"
                     android:background="@color/gray"
-                    android:visibility="visible" />
+                    android:visibility="visible"
+                    tools:visibility="visible" />
+
+
 
                 <LinearLayout
                     android:id="@+id/llTrafficAlert"
@@ -356,6 +359,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:textColorLink="@color/ic_launcher_background"
                         tools:ignore="TouchTargetSizeCheck" />
                 </LinearLayout>
 
@@ -395,6 +399,39 @@
                         tools:ignore="TouchTargetSizeCheck" />
                 </LinearLayout>
 
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/gray"
+                    android:visibility="visible" />
+
+                <LinearLayout
+                    android:id="@+id/ImportFromCalendar"
+                    android:layout_width="260dp"
+                    android:layout_height="100dp"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_10sdp"
+                    android:visibility="visible">
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="20dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
+                        android:fontFamily="sans-serif-condensed"
+                        android:gravity="center_horizontal"
+                        android:paddingLeft="@dimen/_78sdp"
+                        android:text="Or                   Import Event From Calendar"
+                        android:textColor="@android:color/holo_blue_bright"
+                        android:textSize="@dimen/_15sdp" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/gray"
+                    android:visibility="visible" />
 
             </LinearLayout>
         </ScrollView>
@@ -406,10 +443,10 @@
             android:layout_gravity="bottom|center_horizontal"
             android:layout_marginTop="-70dp"
             android:layout_marginRight="@dimen/_1sdp"
-            android:background="@drawable/white_full_rounded_corner"
+            android:background="@color/dark_gray"
             android:elevation="@dimen/_15sdp"
             android:padding="@dimen/_5sdp"
             android:src="@drawable/ic_baseline_check_24"
-            android:tint="@color/white" />
+            android:tint="@android:color/holo_blue_bright" />
     </LinearLayout>
 </layout>

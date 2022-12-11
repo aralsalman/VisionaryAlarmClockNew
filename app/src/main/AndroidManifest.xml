@@ -15,6 +15,8 @@
         android:name="android.permission.WRITE_SETTINGS"
         tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- continue running even when the user isn't interacting with the app -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
         android:allowBackup="true"
@@ -50,37 +52,46 @@
              </intent-filter>
         </activity> -->
 
+        <!--  <activity
+              android:name=".ui.NewsActivity"
+              android:exported="true">
+              <intent-filter>
+                  <action android:name="android.intent.action.MAIN" />
 
-        <activity
-            android:name=".activity.CalendarDayActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.BootActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.Transparent" />
-        <activity
-            android:name=".activity.AlarmActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.AddNewReminder"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.HomeActivity"
-            android:label="@string/title_activity_home"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.ReminderApp.NoActionBar"
-            android:windowSoftInputMode="adjustNothing" />
+                  <category android:name="android.intent.category.LAUNCHER" />
+              </intent-filter>
+          </activity>-->
+
+          <activity
+              android:name=".activity.CalendarDayActivity"
+              android:screenOrientation="portrait" />
+          <activity
+              android:name=".activity.BootActivity"
+              android:screenOrientation="portrait"
+              android:theme="@style/Theme.Transparent" />
+          <activity
+              android:name=".activity.AlarmActivity"
+              android:screenOrientation="portrait" />
+          <activity
+              android:name=".activity.AddNewReminder"
+              android:screenOrientation="portrait" />
+          <activity
+              android:name=".activity.HomeActivity"
+              android:label="@string/title_activity_home"
+              android:screenOrientation="portrait"
+              android:theme="@style/Theme.ReminderApp.NoActionBar"
+              android:windowSoftInputMode="adjustNothing" />
 
 
-        <activity
-            android:name=".activity.WeatherActivity"
-            android:exported="true"
-            android:label="@string/title_activity_weather">
-           <!-- <intent-filter>
-                 <action android:name="android.intent.action." />
+          <activity
+              android:name=".activity.WeatherActivity"
+              android:exported="true"
+              android:label="@string/title_activity_weather">
+             <!-- <intent-filter>
+                   <action android:name="android.intent.action." />
 
-                 <category android:name="android.intent.category.LAUNCHER" />
-             </intent-filter> -->
+                   <category android:name="android.intent.category.LAUNCHER" />
+               </intent-filter> -->
         </activity>
 
 

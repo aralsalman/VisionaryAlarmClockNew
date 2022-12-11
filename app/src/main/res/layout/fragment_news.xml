@@ -3,9 +3,246 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/ivArticleImage5"
+            android:layout_width="150dp"
+            android:layout_height="77dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/tvPublishedAt4"
+            app:layout_constraintEnd_toStartOf="@+id/tvTitle4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvPublishedAt"
+            app:srcCompat="@drawable/twitter" />
+
+        <TextView
+            android:id="@+id/tvTitle4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="4dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:text="Twitter to relaunch subscription service Twitter Blue on Monday - CNBC "
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivArticleImage5"
+            app:layout_constraintTop_toBottomOf="@+id/tvDescription" />
+
+        <TextView
+            android:id="@+id/tvDescription3"
+            android:layout_width="204dp"
+            android:layout_height="87dp"
+            android:layout_marginTop="16dp"
+            android:ellipsize="end"
+            android:maxLines="5"
+            android:text="Twitter will relaunch a revamped version of its subscription service Twitter Blue on Monday at a higher price for Apple users, the company said in a tweet. "
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvPublishedAt4"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle4" />
+
+        <TextView
+            android:id="@+id/tvSource5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="4dp"
+            android:text="CNBC"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toTopOf="@+id/tvPublishedAt4"
+            app:layout_constraintStart_toStartOf="@+id/tvPublishedAt4" />
+
+        <TextView
+            android:id="@+id/tvPublishedAt4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginBottom="4dp"
+            android:text="2022-12-10"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/tvDescription3"
+            app:layout_constraintEnd_toStartOf="@+id/tvDescription3"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivArticleImage3"
+            android:layout_width="150dp"
+            android:layout_height="77dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/tvSource3"
+            app:layout_constraintEnd_toStartOf="@+id/tvTitle2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ronaldo" />
+
+        <TextView
+            android:id="@+id/tvSource3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginBottom="8dp"
+            android:text="Fox Sports"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toTopOf="@+id/tvPublishedAt3"
+            app:layout_constraintStart_toStartOf="@+id/tvPublishedAt3" />
+
+        <TextView
+            android:id="@+id/tvTitle2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:text="World Cup stage was set for a Cristiana Ronaldo hero moment, but it never arrived...
+"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivArticleImage3"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvDescription2"
+            android:layout_width="204dp"
+            android:layout_height="87dp"
+            android:layout_marginTop="16dp"
+            android:ellipsize="end"
+            android:maxLines="5"
+            android:text="Cristiano Ronaldo, one of the greatest to ever play the game, will never win its most coveted trophy. But he had one last chance to save the day.
+"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvPublishedAt3"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle2" />
+
+        <TextView
+            android:id="@+id/tvPublishedAt3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginBottom="4dp"
+            android:text="2022-12-11"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/tvDescription2"
+            app:layout_constraintEnd_toStartOf="@+id/tvDescription2"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivArticleImage"
+            android:layout_width="150dp"
+            android:layout_height="77dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="@+id/tvSource"
+            app:layout_constraintEnd_toStartOf="@+id/tvTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPublishedAt3"
+            app:srcCompat="@drawable/harrymeghan" />
+
+        <TextView
+            android:id="@+id/tvPublishedAt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginBottom="4dp"
+            android:text="2022-12-11"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/tvDescription"
+            app:layout_constraintEnd_toStartOf="@+id/tvDescription"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="4dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:text="Harry and Meghan's Chances at King Charles' Coronation Invite in Question - TMZ "
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivArticleImage"
+            app:layout_constraintTop_toBottomOf="@+id/tvDescription2" />
+
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="204dp"
+            android:layout_height="87dp"
+            android:layout_marginTop="16dp"
+            android:ellipsize="end"
+            android:maxLines="5"
+            android:text="Some in the British media are suggesting Harry and Meghan have ruined their chances at being invited to King Charles' coronation next year with the... "
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvPublishedAt"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+
+        <TextView
+            android:id="@+id/tvSource"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="8dp"
+            android:text="TMZ "
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toTopOf="@+id/tvPublishedAt"
+            app:layout_constraintStart_toStartOf="@+id/tvPublishedAt" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="180dp"
+            android:layout_height="76dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginBottom="2dp"
+            android:text="Breaking News"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"></Button>
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="180dp"
+            android:layout_height="76dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="2dp"
+            android:text="Search"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/button4"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"></Button>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </layout>

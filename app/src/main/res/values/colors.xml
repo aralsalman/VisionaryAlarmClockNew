@@ -9,7 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#a1a1a1</color>
     <color name="dark_gray">#393839</color>
-    <color name="white_transperent">#26FFFFFF</color>
+    <color name="white_transperent">#393839</color>
     <color name="pink_card_color">#F8A6CA</color>
     <color name="green">#4CAF50</color>
     <color name="yellow">#FFC107</color>

@@ -152,9 +152,9 @@ class AddNewReminder : AppCompatActivity(), View.OnClickListener {
             }
         }
 
-        dialogMobileNoBinding.etMobileNo.addTextChangedListener {
+        /*dialogMobileNoBinding.etMobileNo.addTextChangedListener {
             mobileNo = it.toString()
-        }
+        }*/
 
         materialDialogBuilder.show()
     }
