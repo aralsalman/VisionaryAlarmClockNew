@@ -8,10 +8,7 @@ import androidx.fragment.app.Fragment
 import com.csi4999.visionaryalarmclock.R
 import com.csi4999.visionaryalarmclock.activity.MapsActivity
 import com.csi4999.visionaryalarmclock.databinding.FragmentMapsBinding
-import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.*
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 

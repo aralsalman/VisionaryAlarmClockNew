@@ -1,5 +1,7 @@
 package com.csi4999.visionaryalarmclock.activity;
 
+import static java.sql.DriverManager.println;
+
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -8,6 +10,7 @@ import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.os.Debug;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -82,7 +85,12 @@ public class WeatherActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(WeatherActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION},PERMISSION_CODE);
         }
         Location location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-        cityName = getCityName(location.getLongitude(), location.getLatitude());
+        if (location != null){cityName = getCityName(location.getLongitude(),location.getLatitude());
+            getWeatherInfo(cityName);
+        } else {
+            cityName = "London";
+            getWeatherInfo(cityName);
+        }
         getWeatherInfo(cityName);
 
         searchIV.setOnClickListener(new View.OnClickListener() {
@@ -102,7 +110,7 @@ public class WeatherActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+   public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if(requestCode==PERMISSION_CODE){
             if(grantResults.length>0 && grantResults[0]==PackageManager.PERMISSION_GRANTED){
@@ -122,6 +130,7 @@ public class WeatherActivity extends AppCompatActivity {
 
             for(Address adr : addresses){
                 if(adr != null){
+
                     String city = adr.getLocality();
                     if(city!=null && !city.equals("")){
                         cityName = city;
@@ -134,12 +143,16 @@ public class WeatherActivity extends AppCompatActivity {
 
         }catch (IOException e){
             e.printStackTrace();
-        }
-        return cityName;
-    }
+            println(cityName);
 
+        }
+        println(cityName);
+        cityName = "White Lake, MI"; //testing!!!!!
+        return cityName;
+
+    }
     private void getWeatherInfo(String cityName){
-        String url = "https://api.weatherbit.io/v2.0/forecast/hourly?units=i&key=5f527eb4f9a84c1c8a952bf208173f8e&hours=24&city=" + cityName;
+        String url = "https://api.weatherbit.io/v2.0/current?units=I&key=473569f890dd4f67909b96657fa79bb5&city=" + cityName;
         cityNameTV.setText(cityName);
         RequestQueue requestQueue = Volley.newRequestQueue(WeatherActivity.this);
 
@@ -148,27 +161,31 @@ public class WeatherActivity extends AppCompatActivity {
             public void onResponse(JSONObject response) {
                 weatherRVModalArrayList.clear();
 
-                try {
-                    String temperature = response.getJSONObject("data").getString("temp");
+               try {
+                    String temperature = response.getJSONArray("data").getJSONObject(0).getString("temp");
                     temperatureTV.setText(temperature + "°F");
-                    String condition = response.getJSONObject("data").getString("text");
-                    String conditionIcon = response.getJSONObject("data").getString("icon");
-                    Picasso.get().load("@drawable/".concat(conditionIcon)).into(iconIV); ///dont have the icons loaded in yet hoping that this will take the icon id from drawables once images are in
-                    conditionTV.setText(condition);
+                   String condition = response.getJSONArray("data").getJSONObject(0).getJSONObject("weather").getString("description");
+                   conditionTV.setText(condition);
+                   //String conditionIcon = response.getJSONObject("weather").getString("icon");
+                    //Picasso.get().load("http:".concat(conditionIcon)).into(iconIV);
 
-                    JSONArray forecastObj = response.getJSONArray("data");
 
-                    for(int i=0; i<forecastObj.length(); i++ ){
-                        JSONObject hourObj = forecastObj.getJSONObject(i);
-                        String time = hourObj.getString("timestamp_local");
-                        String temper = hourObj.getString("temp");
-                        String img = hourObj.getJSONObject("weather").getString("icon");
-                        String wind = hourObj.getString("wind_spd");
+                    JSONObject forecastObj = response.getJSONObject("forecast");
+                    JSONObject forcastO = forecastObj.getJSONArray("forecastday").getJSONObject(0);
+                    JSONArray hourArray = forcastO.getJSONArray("hour");
+                    println(cityName);
+
+                   /* for(int i=0; i<forecastObj.length(); i++ ){
+                        JSONObject hourObj = hourArray.getJSONObject(i);
+                        String time = hourObj.getString("time");
+                        String temper = hourObj.getString("temp_f");
+                        String img = hourObj.getJSONObject("condition").getString("icon");
+                        String wind = hourObj.getString("wind_mph");
                         weatherRVModalArrayList.add(new WeatherRVModal(time,temper,img,wind));
                     }
                     weatherRVAdapter.notifyDataSetChanged();
 
-                } catch (JSONException e) {
+                */} catch (JSONException e) {
                     e.printStackTrace();
                 }
 

@@ -82,7 +82,7 @@
             android:layout_margin="10dp"
             android:gravity="center_horizontal"
             android:padding="5dp"
-            android:text="23"
+            android:text="33?"
             android:textColor="@color/white"
             android:textSize="70dp"
             />
@@ -97,7 +97,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@drawable/c04d" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -105,7 +105,7 @@
             android:layout_margin="10dp"
             android:gravity="center"
             android:textAlignment="center"
-            android:text="Condition"
+            android:text="Cloudy?"
             android:textColor="@color/white"
             android:layout_below="@id/idIVIcon"
             />
