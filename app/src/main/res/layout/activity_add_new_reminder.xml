@@ -452,7 +452,7 @@
                         android:textSize="@dimen/_15sdp" />
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
-                        android:id="@+id/switchMode"
+                        android:id="@+id/switchWeatherMode"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"

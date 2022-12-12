@@ -4,8 +4,10 @@ import android.media.Ringtone
 import android.media.RingtoneManager
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.WindowManager
+import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.csi4999.visionaryalarmclock.R
@@ -13,6 +15,7 @@ import com.csi4999.visionaryalarmclock.database.MySharedPreferences
 import com.csi4999.visionaryalarmclock.database.ReminderDatabase
 import com.csi4999.visionaryalarmclock.databinding.ActivityAlarmBinding
 import com.csi4999.visionaryalarmclock.util.*
+import com.google.android.material.switchmaterial.SwitchMaterial
 import java.util.*
 
 
@@ -30,6 +33,11 @@ class AlarmActivity : AppCompatActivity() {
     lateinit var reminderReportAs:String
     lateinit var reminderDatabase:ReminderDatabase
 
+    lateinit var trafficSwitch: SwitchMaterial
+    lateinit var weatherSwitch: SwitchMaterial
+    lateinit var alarmMapLayout:LinearLayout
+    lateinit var alarmWeather: LinearLayout
+
     override fun onCreate(savedInstanceState: Bundle?) {
         if (isDeviceLocked(this)){
             val wind = this.getWindow();
@@ -43,6 +51,30 @@ class AlarmActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         activityAlarmBinding = DataBindingUtil.setContentView(this,R.layout.activity_alarm)
         initAll()
+
+       /* trafficSwitch=findViewById(R.id.switchTrafficMode)
+        weatherSwitch=findViewById(R.id.switchWeatherMode)
+        alarmMapLayout=findViewById(R.id.LLAlarmMap)
+        alarmWeather=findViewById(R.id.RLAlarmWeather)
+
+        trafficSwitch.setOnCheckedChangeListener { compoundButton, b ->
+            if (trafficSwitch.isChecked){
+                Log.d("TAG", "This is the status after checking"+trafficSwitch.isChecked)
+                alarmMapLayout.visibility = View.VISIBLE
+            }else{
+                alarmMapLayout.visibility = View.GONE
+            }
+        }
+
+        weatherSwitch.setOnCheckedChangeListener { compoundButton, b ->
+            if (weatherSwitch.isChecked){
+                Log.d("TAG", "This is the status after checking"+weatherSwitch.isChecked)
+                alarmWeather.visibility = View.VISIBLE
+            }else{
+                alarmWeather.visibility = View.GONE
+            }
+        }*/
+
     }
 
     override fun onDestroy() {
