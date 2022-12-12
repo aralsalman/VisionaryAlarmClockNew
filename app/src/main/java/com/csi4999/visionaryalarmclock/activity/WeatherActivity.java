@@ -89,7 +89,7 @@ public class WeatherActivity extends AppCompatActivity {
         if (location != null){cityName = getCityName(location.getLongitude(),location.getLatitude());
             getWeatherInfo(cityName);
         } else {
-            cityName = "London";
+            cityName = "Auburn Hills";
             getWeatherInfo(cityName);
         }
         getWeatherInfo(cityName);

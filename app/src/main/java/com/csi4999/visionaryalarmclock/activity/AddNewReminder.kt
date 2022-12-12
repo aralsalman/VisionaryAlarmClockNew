@@ -102,7 +102,7 @@ class AddNewReminder : AppCompatActivity(), View.OnClickListener {
         binder.btnSaveReminder.setOnClickListener(this)
         binder.ivBack.setOnClickListener(this)
 
-        trafficSwitch=findViewById(R.id.switchTrafficMode)
+        /*trafficSwitch=findViewById(R.id.switchTrafficMode)
         startLayout=findViewById(R.id.startPointLayout)
         destLayout=findViewById(R.id.destPointLayout)
         Log.d("TAG", "This is the status before checking"+trafficSwitch.isChecked)
@@ -113,7 +113,7 @@ class AddNewReminder : AppCompatActivity(), View.OnClickListener {
         }else{
             startLayout.visibility = View.GONE
             destLayout.visibility = View.GONE
-        }
+        }*/
         /*
        * set default values
        * */

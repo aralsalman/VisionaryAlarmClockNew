@@ -31,7 +31,8 @@
                 android:layout_height="wrap_content"
                 android:hint="Remind me to..."
                 android:textColor="#FFFFFF"
-                android:textColorHint="#F3F1F1" />
+                android:textColorHint="#F3F1F1"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -351,7 +352,7 @@
                         android:layout_height="@dimen/_25sdp"
                         android:background="@color/dark_gray"
                         android:padding="@dimen/_5sdp"
-                        android:src="@drawable/ic_baseline_alarm_24"
+                        android:src="@android:drawable/ic_dialog_map"
                         android:tint="@color/white" />
 
                     <com.google.android.material.textview.MaterialTextView
@@ -381,7 +382,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
-                    android:visibility="visible">
+                    android:visibility="gone">
 
                     <TextView
                         android:id="@+id/textView2"
@@ -404,7 +405,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
-                    android:visibility="visible">
+                    android:visibility="gone">
 
                     <TextView
                         android:id="@+id/textView3"

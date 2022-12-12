@@ -4,11 +4,16 @@ import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Looper
+import android.util.Log
+import android.view.View
+import android.widget.Button
+import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
 import com.csi4999.visionaryalarmclock.R
 import com.csi4999.visionaryalarmclock.databinding.ActivityMapsBinding
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.material.card.MaterialCardView
 import com.mapbox.android.core.location.LocationEngine
 import com.mapbox.android.core.location.LocationEngineCallback
 import com.mapbox.android.core.location.LocationEngineRequest
@@ -33,13 +38,19 @@ class MapsActivityV2 : AppCompatActivity(), OnMapReadyCallback, LocationEngine, 
     lateinit var locationEngine: LocationEngine
     lateinit var locationIndicatorLayer: LocationIndicatorLayer
     lateinit var originLocation: Location
-
     //remove below var
     private val navigationLocationProvider = NavigationLocationProvider()
     //remove below class
     class NavigationLocationProvider {
 
     }
+
+
+    lateinit var mapSearchBtn: Button
+    lateinit var mapLayout: LinearLayout
+    lateinit var mapSearchLay: LinearLayout
+    lateinit var matcard: MaterialCardView
+
 
 
     private lateinit var binding: ActivityMapsBinding
@@ -66,6 +77,39 @@ class MapsActivityV2 : AppCompatActivity(), OnMapReadyCallback, LocationEngine, 
             enabled = true
         }
 
+        //mapSearchBtn=findViewById(R.id.MapSearchButton)
+        //mapLayout=findViewById(R.id.mapLinearLayout)
+        //mapSearchLay=findViewById(R.id.mapSearchLinLay)
+        //matcard=findViewById(R.id.materialCardVieww)
+
+
+        val matcard = findViewById<MaterialCardView>(R.id.materialCardVieww)
+        val mapSearchLay = findViewById<LinearLayout>(R.id.mapSearchLinLay)
+        val mapSearchBtn = findViewById<Button>(R.id.MapSearchButton)
+        val mapLayout = findViewById<LinearLayout>(R.id.mapLinearLayout)
+
+        matcard.setOnClickListener(clickListener)
+        mapSearchLay.setOnClickListener(clickListener)
+        mapSearchBtn.setOnClickListener(clickListener)
+        mapLayout.setOnClickListener(clickListener)
+        Log.d("TAG", "Clicked!!")
+    }
+
+    private val clickListener = View.OnClickListener { view ->
+        when (view.id) {
+            //R.id.materialCardVieww -> firstFun()
+            //R.id.mapSearchLinLay -> firstFun()
+            //R.id.MapSearchButton -> firstFun()
+            //R.id.mapLinearLayout -> firstFun()
+        }
+    }
+
+    private fun firstFun(){
+        Log.d("TAG", "Clicked!!")
+        //matcard.visibility = View.GONE
+        //mapSearchLay.visibility = View.VISIBLE
+        //mapSearchBtn.visibility = View.VISIBLE
+        //mapLayout.visibility = View.VISIBLE
     }
 
     //can remove below function
