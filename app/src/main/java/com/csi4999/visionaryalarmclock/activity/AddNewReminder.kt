@@ -9,19 +9,21 @@ import android.text.Editable
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.LinearLayout
+import android.widget.Switch
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.widget.addTextChangedListener
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.lifecycleScope
-import com.google.android.material.datepicker.MaterialDatePicker
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.android.material.timepicker.MaterialTimePicker
 import com.csi4999.visionaryalarmclock.R
 import com.csi4999.visionaryalarmclock.database.ReminderDatabase
 import com.csi4999.visionaryalarmclock.databinding.ActivityAddNewReminderBinding
 import com.csi4999.visionaryalarmclock.databinding.DialogMobileNoBinding
 import com.csi4999.visionaryalarmclock.model.AddNewReminderTable
 import com.csi4999.visionaryalarmclock.util.*
+import com.google.android.material.datepicker.MaterialDatePicker
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.switchmaterial.SwitchMaterial
+import com.google.android.material.timepicker.MaterialTimePicker
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -42,13 +44,47 @@ class AddNewReminder : AppCompatActivity(), View.OnClickListener {
     lateinit var reminderDatabase: ReminderDatabase
     lateinit var marker: String
     lateinit var addNewReminderTable: AddNewReminderTable
+
+    lateinit var trafficSwitch: SwitchMaterial
+    lateinit var startLayout: LinearLayout
+    lateinit var destLayout: LinearLayout
+
     var tag = AddNewReminder::class.simpleName
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binder = DataBindingUtil.setContentView(this, R.layout.activity_add_new_reminder)
         initAllControls()
+
+        trafficSwitch=findViewById(R.id.switchTrafficMode)
+        startLayout=findViewById(R.id.startPointLayout)
+        destLayout=findViewById(R.id.destPointLayout)
+
+        Log.d("TAG", "This is the status before checking"+trafficSwitch.isChecked)
+        trafficSwitch.setOnCheckedChangeListener { compoundButton, b ->
+            if (trafficSwitch.isChecked){
+                Log.d("TAG", "This is the status after checking"+trafficSwitch.isChecked)
+                startLayout.visibility = View.VISIBLE
+                destLayout.visibility = View.VISIBLE
+            }else{
+                startLayout.visibility = View.GONE
+                destLayout.visibility = View.GONE
+            }
+        }
+
+
+
+        //var trafficSwitch = findViewById(R.id.switchTrafficMode) as SwitchMaterial
+        //var trafficSwitch = findViewById<Switch>(R.id.switchTrafficMode)
+        //var startLayout = findViewById<LinearLayout>(R.id.startPointLayout)
+        //var destLayout = findViewById<LinearLayout>(R.id.destPointLayout)
+
+
+
+
     }
+
+
 
     private fun initAllControls() {
         reminderDatabase = ReminderDatabase.invoke(this@AddNewReminder)
@@ -66,6 +102,18 @@ class AddNewReminder : AppCompatActivity(), View.OnClickListener {
         binder.btnSaveReminder.setOnClickListener(this)
         binder.ivBack.setOnClickListener(this)
 
+        trafficSwitch=findViewById(R.id.switchTrafficMode)
+        startLayout=findViewById(R.id.startPointLayout)
+        destLayout=findViewById(R.id.destPointLayout)
+        Log.d("TAG", "This is the status before checking"+trafficSwitch.isChecked)
+        if (trafficSwitch.isChecked){
+            Log.d("TAG", "This is the status after checking"+trafficSwitch.isChecked)
+            startLayout.visibility = View.VISIBLE
+            destLayout.visibility = View.VISIBLE
+        }else{
+            startLayout.visibility = View.GONE
+            destLayout.visibility = View.GONE
+        }
         /*
        * set default values
        * */

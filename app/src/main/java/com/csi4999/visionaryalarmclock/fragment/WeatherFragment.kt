@@ -12,15 +12,13 @@ class WeatherFragment : Fragment() {
     lateinit var fragmentWeatherBinding: FragmentWeatherBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-       // fragmentMapBinding =
-          //  DataBindingUtil.inflate(inflater, R.layout.fragment_maps, container, false)
 
-        return fragmentWeatherBinding.root
+        val fragment = inflater.inflate(R.layout.fragment_weather, container, false)
+
+        return fragment
     }
 
 

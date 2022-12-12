@@ -25,6 +25,14 @@
                 android:src="@drawable/ic_baseline_arrow_back_24"
                 android:tint="@color/white" />
 
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etRemiderTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Remind me to..."
+                android:textColor="#FFFFFF"
+                android:textColorHint="#F3F1F1" />
+
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -38,14 +46,6 @@
                 app:hintTextAppearance="@style/HintStyle"
                 app:hintTextColor="#F3F1F1"
                 app:placeholderTextAppearance="@style/HintStyle">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etRemiderTitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Remind me to..."
-                    android:textColor="#FFFFFF"
-                    android:textColorHint="#F3F1F1" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -73,6 +73,18 @@
                 android:layout_marginRight="@dimen/_16sdp"
                 android:background="@color/white" />
 
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnSaveReminder"
+                android:layout_width="162dp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginTop="-70dp"
+                android:layout_marginEnd="@dimen/_1sdp"
+                android:background="@color/dark_gray"
+                android:elevation="@dimen/_15sdp"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/ic_baseline_check_24"
+                android:tint="@android:color/holo_blue_bright" />
 
         </LinearLayout>
 
@@ -359,8 +371,55 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:checked="false"
                         android:textColorLink="@color/ic_launcher_background"
                         tools:ignore="TouchTargetSizeCheck" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/startPointLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Starting Point:" />
+
+                    <EditText
+                        android:id="@+id/editTextTextPostalAddress3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="textPostalAddress" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/destPointLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="89dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Destination Point:" />
+
+                    <EditText
+                        android:id="@+id/editTextTextPostalAddress4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="textPostalAddress" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -409,10 +468,11 @@
                 <LinearLayout
                     android:id="@+id/ImportFromCalendar"
                     android:layout_width="260dp"
-                    android:layout_height="100dp"
+                    android:layout_height="91dp"
                     android:orientation="horizontal"
                     android:padding="@dimen/_10sdp"
                     android:visibility="visible">
+
                     <com.google.android.material.textview.MaterialTextView
                         android:layout_width="20dp"
                         android:layout_height="wrap_content"
@@ -421,9 +481,9 @@
                         android:fontFamily="sans-serif-condensed"
                         android:gravity="center_horizontal"
                         android:paddingLeft="@dimen/_78sdp"
-                        android:text="Or                   Import Event From Calendar"
+                        android:text="Or                        Import Event From Calendar"
                         android:textColor="@android:color/holo_blue_bright"
-                        android:textSize="@dimen/_15sdp" />
+                        android:textSize="@dimen/_13sdp" />
                 </LinearLayout>
 
 
@@ -436,17 +496,6 @@
             </LinearLayout>
         </ScrollView>
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/btnSaveReminder"
-            android:layout_width="@dimen/_35sdp"
-            android:layout_height="@dimen/_35sdp"
-            android:layout_gravity="bottom|center_horizontal"
-            android:layout_marginTop="-70dp"
-            android:layout_marginRight="@dimen/_1sdp"
-            android:background="@color/dark_gray"
-            android:elevation="@dimen/_15sdp"
-            android:padding="@dimen/_5sdp"
-            android:src="@drawable/ic_baseline_check_24"
-            android:tint="@android:color/holo_blue_bright" />
+
     </LinearLayout>
 </layout>
