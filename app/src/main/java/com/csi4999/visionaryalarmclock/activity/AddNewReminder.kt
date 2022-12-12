@@ -17,7 +17,7 @@ import androidx.lifecycle.lifecycleScope
 import com.csi4999.visionaryalarmclock.R
 import com.csi4999.visionaryalarmclock.database.ReminderDatabase
 import com.csi4999.visionaryalarmclock.databinding.ActivityAddNewReminderBinding
-import com.csi4999.visionaryalarmclock.databinding.DialogMobileNoBinding
+//import com.csi4999.visionaryalarmclock.databinding.DialogMobileNoBinding
 import com.csi4999.visionaryalarmclock.model.AddNewReminderTable
 import com.csi4999.visionaryalarmclock.util.*
 import com.google.android.material.datepicker.MaterialDatePicker
@@ -176,13 +176,13 @@ class AddNewReminder : AppCompatActivity(), View.OnClickListener {
         val materialDialogBuilder =
             MaterialAlertDialogBuilder(this)
 
-        val dialogMobileNoBinding = DataBindingUtil.inflate(
+        /*val dialogMobileNoBinding = DataBindingUtil.inflate(
             LayoutInflater.from(materialDialogBuilder.getContext()),
             R.layout.dialog_mobile_no,
             null,
             false
-        ) as DialogMobileNoBinding
-        materialDialogBuilder.setView(dialogMobileNoBinding.root)
+        ) as DialogMobileNoBinding*/
+        /*materialDialogBuilder.setView(dialogMobileNoBinding.root)*/
 
         materialDialogBuilder.setTitle("Add Mobile No.")
 

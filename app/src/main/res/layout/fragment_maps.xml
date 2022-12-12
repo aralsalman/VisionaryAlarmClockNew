@@ -38,7 +38,7 @@
                 android:id="@+id/MapSearchButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Search...                                                                     or import alarm with traffic mode enabeled"
+                android:text="Search...                                                                     or import alarm with traffic mode enabled"
                 android:textAlignment="textStart"
                 android:textColor="@color/white"
                 android:textSize="11dp"
