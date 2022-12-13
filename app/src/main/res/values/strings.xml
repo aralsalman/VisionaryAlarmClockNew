@@ -13,8 +13,8 @@
     <string name="menu_slideshow">Slideshow</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyCKworSLJEygpdxzhSk0kfHXL4vCZQeggw</string>
-    <!--Admob ids -->
+    <!--  <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyCKworSLJEygpdxzhSk0kfHXL4vCZQeggw</string>-->
+     <!--Admob ids -->
     <string name="title_activity_maps">MapsActivity</string>
     <string name="title_activity_weather">WeatherActivity</string>
     <string name="mapbox_access_token">pk.eyJ1IjoiYXJhbHNhbG1hbiIsImEiOiJjbGI3NHpvM3owN2tjM3VwbGVtZ25pMDE2In0.FnzOVylj7zbDmyeYeKlZeA</string>
